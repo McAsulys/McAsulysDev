@@ -30,7 +30,7 @@
 	</head>
 	
 	<body>
-		<header>
+		<div id= "header">
 			<h3>Mon Facebook à moi !</h3>
 		</header>
 		
@@ -47,8 +47,8 @@
 		</div>
 		
 		<div class="recherche">
-			<input type="submit" value="Hop.." placeholder="Rechercher des amis">
-			Résultat de la recherche
+			<input type="submit" value="Rechercher des amis">Hop...
+			<p>Résultat de la recherche</p>
 		</div>
 		
 	</body>
