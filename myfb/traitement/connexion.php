@@ -2,7 +2,7 @@
 
 $sql = "SELECT * FROM user WHERE login=? AND mdp=PASSWORD(?)";
 
-// Etape 1  : 
+// Etape 1  :
 
 $q = $pdo->prepare($sql);
 $q->execute(array($_POST["login"],$_POST["passwd"]));
@@ -10,15 +10,14 @@ $q->execute(array($_POST["login"],$_POST["passwd"]));
 // Etape 2 : execution : 2 paramètres dans la requêtes !!
 
 if($r = $q->fetch()){
-	print "c'est bon";
-	
+
 	$_SESSION["id"] = $r["id"];
 	$_SESSION["login"] = $r["login"];
-	
+
 	header("location: index.php");
 }
 else {
-	header("location: index.php?action=login");
+	//header("location: index.php?action=login");
 }
 
 // Etape 3 : ici le login est unique, donc on sait que l'on peut avoir zero ou une  seule ligne.

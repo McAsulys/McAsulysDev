@@ -7,8 +7,9 @@
 
 	if(isset($_GET["action"])){
 		$action = $_GET["action"];
-
+		//print $listeDesActions[$action];
 		header("location: $listeDesActions[$action]");
+
 	}
 	else {
 		if(isset($_SESSION["sessions"])){
