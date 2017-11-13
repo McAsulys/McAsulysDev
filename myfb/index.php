@@ -2,8 +2,24 @@
 
 	include("config/config.php");
 	include("config/bd.php");
+	include("config/actions.php");
 	session_start();
-	
+
+	if(isset($_GET["action"])){
+		$action = $_GET["action"];
+
+		header("location: $listeDesActions[$action]");
+	}
+	else {
+		if(isset($_SESSION["sessions"])){
+			header("location: index.php?action=amis");
+		}
+		else{
+			header("location: index.php?action=connexion");
+		}
+	}
+
+
 ?>
 
 <!DOCTYPE html>
@@ -12,14 +28,14 @@
 		<meta charset="utf-8">
 			<meta http-equiv="X-UA-Compatible" content="IE=edge">
 			<meta name="viewport" content="width=device-width, initial-scale=1">
-			
-			
+
+
     <title>Facebook</title>
 		<!-- Bootstrap core CSS -->
 		<link href="./css/bootstrap.min.css" rel="stylesheet">
 
 		<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-		<link href="./css/ie10.css" rel="stylesheet">
+		<!--<link href="./css/ie10.css" rel="stylesheet"> -->
 
 
 		<!-- Ma feuille de style à moi -->
@@ -28,30 +44,35 @@
 		<script src="js/jquery-3.2.1.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
 	</head>
-	
+
 	<body>
 		<header>
 			<h3>Mon Facebook à moi !</h3>
 		</header>
-		
+
 		<div class="amis">
 			Vos amis
+
 		</div>
-	
+
 		<div class="pasDeReponse">
 			Ceux la ne vous ont pas répondu, snif !
 		</div>
-		
+
 		<div class="attente">
 			Ceux la espèrent que vous aller leur dire oui !
 		</div>
-		
+
 		<div class="recherche">
 			<input type="submit" value="Hop.." placeholder="Rechercher des amis">
 			Résultat de la recherche
 		</div>
-		
+		<form class="login" action="index.php?action=login" method="post">
+			<input type="submit" name="login" value="login">
+		</form>
+		<form class="signup" action="index.php?action=signup" method="post">
+			<input type="submit" name="login" value="longin">
+		</form>
+
 	</body>
 </html>
-
-
