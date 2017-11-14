@@ -1,0 +1,51 @@
+/* Layout */
+* {box-sizing: border-box}
+
+
+
+
+body {
+    margin: 1em;
+    background: #fff;
+    font-family: "Century Gothic", helvetica, arial, sans-serif;
+    font-size: 1em;
+}
+header, div, section, footer {
+    padding: 10px;
+    border-radius: 10px;
+    color: #fff;
+}
+section {
+    border: 2px solid gray;
+
+}
+header {
+    background: dodgerblue;
+    text-align: center;
+}
+div {
+    color: #555;
+}
+nav a {
+    display: block;
+    padding: .5em 1em;
+    color: #fff;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255,255,255,.3);
+}
+section {
+    background: #eee;
+}
+footer {
+    background: olivedrab;
+    text-align: center;
+}
+
+h1 {
+    margin: 1em 0;
+    color: #345;
+    text-shadow: 0 1px 1px #fff;
+    text-align: center;
+    font-family: georgia, "trebuchet ms", arial, serif;
+}
+section h1 {color: #fff; text-shadow: none}

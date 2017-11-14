@@ -1,0 +1,20 @@
+.flex-parent{
+  width: 400px;
+  height: 400px;
+  background: url(../imgs/bart.jpg);
+  background-size: cover;
+  border: 1px solid black;
+
+  display: flex;
+
+  /*justify-content: center;
+  align-items: center;*/
+}
+
+.flex-parent span{
+  background-color: #333;
+  color: white;
+  padding: 10px;
+
+  margin: auto;
+}
