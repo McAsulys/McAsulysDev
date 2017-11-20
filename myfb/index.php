@@ -1,7 +1,5 @@
 <?php
-
-	include("config/config.php");
-	include("config/bd.php");
+	
 	include("config/actions.php");
 	session_start();
 
