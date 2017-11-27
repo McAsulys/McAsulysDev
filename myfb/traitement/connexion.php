@@ -10,7 +10,7 @@ $q->execute(array($_POST["login"],$_POST["passwd"]));
 // Etape 2 : execution : 2 paramètres dans la requêtes !!
 
 if($r = $q->fetch()){
-	$_SESSIONS["id"] = $r["id"];
+	$_SESSION["id"] = $r["id"];
 	header("location: ../index.php?action=amis");
 }
 else {
