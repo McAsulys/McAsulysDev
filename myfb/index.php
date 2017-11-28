@@ -1,7 +1,6 @@
 <?php
-	
+	include("config/header.php");
 	include("config/actions.php");
-	session_start();
 
 	if(isset($_GET["action"])){
 		$action = $_GET["action"];

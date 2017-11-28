@@ -1,8 +1,9 @@
+<?php
+  include("../config/header.php");
+ ?>
+
 affichage des amis
 <?php
-if(isset($_SESSION))
-  echo "coucou";
-exit;
 include("../config/config.php");
 include("../config/bd.php");
 $sql = "SELECT login FROM user
@@ -10,6 +11,10 @@ $sql = "SELECT login FROM user
         WHERE idUtilisateur1 = ?;";
 
 $q = $pdo->prepare($sql);
+
+print_r($_SESSION);
+exit;
+
 $q->execute($_SESSION["id"]); //session non déclaré ??
 
 while($r = $q->fetch()){
