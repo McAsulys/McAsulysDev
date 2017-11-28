@@ -1,0 +1,23 @@
+*{
+    padding:0;
+    margin:0;
+}
+
+/** let's go grid **/
+
+#exercice1 div{
+  background-color: orange;
+  border: 1px solid purple;
+  padding: 10px;
+}
+#exercice1{
+  display: grid; /*ouvertur du grid*/
+  grid-template-columns: 100px 200px 100px;
+  /*définit la nombre et leur largeur de colonne*/
+  grid-template-rows: 100px 150px;
+  /*défini la largeur des ligne.*/
+  grid-auto-rows: 200px;
+  /*pour les colone non specifier dans template*/
+  grid-gap: 20px 10px;
+  /*définit un écartement entre les ligne et colonne
+}

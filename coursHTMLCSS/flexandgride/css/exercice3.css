@@ -1,7 +1,18 @@
 /* Layout */
 * {box-sizing: border-box}
 
-
+.conteneur{
+  display: flex;
+  justify-content: space-between;
+}
+section{
+  width: 32%;
+  display: flex;
+  flex-direction: column;
+}
+footer{
+  margin-top : auto;
+}
 
 
 body {

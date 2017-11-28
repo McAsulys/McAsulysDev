@@ -90,3 +90,30 @@ small {
         width : 100%
     }
 }
+
+/*mise en page*/
+
+form{
+  display: flex;
+}
+form > div{
+  flex: 1 1 0;
+}
+form > div > p{
+  display: flex;
+}
+form > div:first-child > p:first-child{
+  display: flex;
+  justify-content: flex-start;
+}
+input:not([type="submit"]){
+  flex-grow: 1;
+}
+form > div:last-child{
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+textarea{
+  flex-grow: 1;
+}
