@@ -13,7 +13,6 @@ $sql = "SELECT login FROM user
 $q = $pdo->prepare($sql);
 
 print_r($_SESSION);
-exit;
 
 $q->execute($_SESSION["id"]); //session non déclaré ??
 

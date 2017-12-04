@@ -6,19 +6,13 @@ include("../config/bd.php");
 <?php
 $titre = $_POST["titre"];
 $contenu = $_POST["contenu"];
-$date = date("d-m-y");
+$date = date("y-m-d h:m:s");
 $id = $_SESSION["id"];
 
-$req = $pdo->prepare("INSERT INTO ecrit VALUE(
-        NULL,
-        ?,
-        ?,
-        ?,
-        NULL,
-        ?,
-        1,
-      )");
+$req = $pdo->prepare("INSERT INTO ecrit VALUES(NULL,?,?,?,NULL,?,1);");
 
 $t = array($titre,$contenu,$date,$id);
 $req->execute($t);
+
+header("location: ../index.php?action=mur");
  ?>
