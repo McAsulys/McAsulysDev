@@ -1,0 +1,92 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?e7n68h');
+  src:  url('fonts/icomoon.eot?e7n68h#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?e7n68h') format('truetype'),
+    url('fonts/icomoon.woff?e7n68h') format('woff'),
+    url('fonts/icomoon.svg?e7n68h#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-google-plus:before {
+  content: "\e900";
+}
+.icon-whatsapp:before {
+  content: "\e901";
+}
+.icon-linkedin-logo:before {
+  content: "\e902";
+}
+.icon-youtube-logo:before {
+  content: "\e903";
+}
+.icon-facebook-logo:before {
+  content: "\e904";
+}
+.icon-twitter-logo-silhouette:before {
+  content: "\e905";
+}
+.icon-mastercard:before {
+  content: "\e906";
+}
+.icon-visa-pay-logo:before {
+  content: "\e907";
+}
+.icon-paypal-logo:before {
+  content: "\e908";
+}
+.icon-discover-logo-of-pay-system:before {
+  content: "\e909";
+}
+.icon-placeholder-filled-point:before {
+  content: "\e90a";
+}
+.icon-paper-bill:before {
+  content: "\e90b";
+}
+.icon-dropbox-logo:before {
+  content: "\e90c";
+}
+.icon-help-lifeguard-symbol:before {
+  content: "\e90d";
+}
+.icon-plane:before {
+  content: "\e90e";
+}
+.icon-exchange-arrows:before {
+  content: "\e90f";
+}
+.icon-heart:before {
+  content: "\e910";
+}
+.icon-next:before {
+  content: "\e911";
+}
+.icon-paper-bag:before {
+  content: "\e912";
+}
+.icon-magnifying-glass:before {
+  content: "\e913";
+}
+.icon-mail:before {
+  content: "\e914";
+}
+.icon-phone-receiver:before {
+  content: "\e915";
+}

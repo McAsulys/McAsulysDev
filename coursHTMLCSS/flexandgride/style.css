@@ -5,19 +5,118 @@
 
 /** let's go grid **/
 
-#exercice1 div{
+#exercice1 div, #exercice1b div, #exercice1c div, #exercice1d div{
   background-color: orange;
   border: 1px solid purple;
   padding: 10px;
 }
 #exercice1{
   display: grid; /*ouvertur du grid*/
-  grid-template-columns: 100px 200px 100px;
+  grid-template-columns: 100px 1fr 100px; /*fr = free space; systeme de poid */
   /*définit la nombre et leur largeur de colonne*/
   grid-template-rows: 100px 150px;
   /*défini la largeur des ligne.*/
   grid-auto-rows: 200px;
   /*pour les colone non specifier dans template*/
   grid-gap: 20px 10px;
-  /*définit un écartement entre les ligne et colonne
+  /*définit un écartement entre les ligne et colonne*/
+}
+
+#exercice1b{
+  display: grid; /*ouvertur du grid*/
+  /*grid-template-columns: repeat(4, 1fr) 100px; /*repete 4 fois le "1fr" */
+  grid-template-columns: repeat(4, minmax(100px, 500px));
+  /*minemax sert à définir un iterval de taille*/
+  grid-auto-rows: minmax(60px, auto);
+  grid-gap: 10px
+}
+
+
+#exercice1c{
+  display: grid; /*ouvertur du grid*/
+  /*grid-template-columns: repeat(4, 1fr) 100px; /*repete 4 fois le "1fr" */
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  /*auto-fill permet de laisser choisir le nombre de colone selon la taille*/
+  /*minemax sert à définir un iterval de taille*/
+  grid-auto-rows: minmax(60px, auto);
+  grid-gap: 10px
+}
+
+#exercice1d{
+  display: grid; /*ouvertur du grid*/
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-auto-rows: 100px;
+  grid-gap: 10px;
+
+
+}
+#exercice1d div:nth-child(1){
+  background-color: purple;
+  grid-column-start: 1;/*colone ou la cellule commencer*/
+  grid-column-end: -1;/*colone de fin de la cellule*/
+}
+#exercice1d div:nth-child(2){
+  background-color: green;
+  grid-row-start: 2;
+  grid-row-end: 5;
+}
+
+
+#exercice2{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-auto-rows: 400px;
+  grid-gap : 10px;
+}
+#exercice2 div{
+  overflow: hidden;
+}
+
+#exercice3{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-areas:
+    "monheader monheader monheader"
+    "macogauche mancontenue macoldroite"
+    "monfooter monfooter monfooter"
+  ;
+  grid-template-areas:
+    "monheader monheader"
+    "macogauche mancontenue"
+    "macoldroite macoldroite"
+    "monfooter monfooter"
+  ; /*creuser la doc*/
+
+}
+
+#exercice3 header{
+  padding: 30px;
+  color: white;
+  background-color: #0091c2;
+
+  grid-area: monheader;
+}
+#exercice3 footer{
+  padding: 30px;
+  color: black;
+  background-color: #607d88;
+
+  grid-area: monfooter;
+}
+#exercice3 #left{
+  padding: 30px;
+  color : white;
+  background-color: #c23100;
+
+  grid-area: macogauche;
+}
+#exercice3 #right{
+  padding: 30px;
+  color: white;
+  background-color: #00c292;
+
+  grif-area : macoldroite;
+}
+#exercie3 #main{
+  padding: 30px;
 }
