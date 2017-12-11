@@ -2,7 +2,9 @@
 include("../config/header.php");
  ?>
 Cecie est le mur
-<a href="ecris.php">écrire un nouvelle article</a>
+<a href="ecris.php">écrire un nouvelle article</a><br>
+<a href="amis.php">vos amis</a><br>
+<a href="members.php">les autres membres</a><br>
 
 <?php
 include("../config/config.php");

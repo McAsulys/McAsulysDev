@@ -8,12 +8,12 @@ include("../config/bd.php");
 
 $ar = array($_SESSION['id'],$_GET['idAmis']);
 
-$sql = "INSERT INTO lien VALUES(NULL,?,?,2)";
+$sql = "UPDATE lien SET etat = 1 WHERE idUtilisateur1 = ? AND idUtilisateur2 = ?";
 
 $q = $pdo->prepare($sql);
 
 $q->execute($ar);
 
-header("location : ../vue/members.php"); 
+header("location : ../index.php"); 
 
  ?>

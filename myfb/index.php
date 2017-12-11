@@ -49,7 +49,7 @@
 		</header>
 
 		<div class="amis">
-			Vos amis
+			<?php include("vues/amis.php") ?>
 
 		</div>
 
