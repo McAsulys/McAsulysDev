@@ -1,0 +1,49 @@
+body{
+  width: 1200px;
+  margin: auto;
+}
+
+/***** PRE HEADER ******/
+.pre_header{
+  display: flex;
+  background-color: #373534;
+  color: #adaaa8;
+}
+.pre_header_telephone{
+  background-color: #6d6a68;
+  padding: 10px;
+}
+.pre_header_email{
+  padding: 10px;
+}
+.pre_header_account{
+
+}
+
+/***** HEADER ******/
+
+.header{
+  display: flex;
+}
+.logo{
+  height: 50px;
+}
+.header_menue{
+  display: flex;
+  list-style: none;
+  flex-direction: row;
+}
+.header_menue div{
+  text-transform: uppercase;
+}
+.basket{
+  display: flex;
+  align-items: center;
+}
+.basket_text{
+  margin: 10px;
+}
+.blackTitle{
+  text-transform: uppercase;
+  font-weight: bold;
+}

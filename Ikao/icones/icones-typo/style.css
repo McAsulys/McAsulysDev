@@ -23,7 +23,6 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
 .icon-google-plus:before {
   content: "\e900";
 }
