@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Othello</title>
+    <link rel="stylesheet" href="css/jquery-ui.min.css">
+    <link rel='stylesheet' href='css/bootstrap.min.css'>
+    <link rel='stylesheet' href='css/style.css'>
+</head>
+
+<body>
+    <div class="container">
+        <header class="row">
+            <div class='col-md-offset-2 col-md-8 well' id="hd">
+                <h1 class="center">Othello Game</h1>
+            </div>
+        </header>
+        <div class="row">
+            <div id='menu' class="col-md-3">
+                <div class="well">
+                    <button type="button" class="btn btn-warning btn-lg btn-block" id='start'>Start</button>
+                    <button type="button" class="btn btn-warning btn-lg btn-block" id='help'>Help</button>
+                </div>
+                <div id="score" class="well">
+                    <h2 class="center">Scores</h2>
+                    <button type="button" class="btn btn-success btn-lg btn-block" disabled> Black: <span id='scoreNoirs'>2 </span> </button>
+                    <button type="button" class="btn btn-success btn-lg btn-block" disabled> White: <span id='scoreBlancs'>2 </span> </button>
+                </div>
+                <div class="well">
+                    <h2 class='center' id='joueurEnCours'>White plays</h2>
+                </div>
+                <p id='error' class='alert alert-danger' role="alert"> Impossible Choice </p>
+            </div>
+            <div id='game' class="col-md-9">
+                <br />
+                <br />
+                <p id='info' class='alert alert-info' role="alert">Hop</p>
+            </div>
+        </div>
+    </div>
+
+    <script src='js/jquery-2.1.4.min.js'></script>
+    <script src='js/jquery-ui.min.js'></script>
+    <script src='js/bootstrap.min.js'></script>
+    <script src='js/evenements.js'></script>
+    <script src='js/jeu.js'></script>
+</body>
+
+</html>

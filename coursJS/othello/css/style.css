@@ -1,0 +1,57 @@
+.echiquier {
+    width: 72%;
+    /*border: 1px solid grey;*/
+    margin: 0 auto;
+    box-shadow: 5px 5px 5px lightgrey;
+}
+
+.echiquier td {
+    width: 9%;
+    position: relative;
+    border: 1px solid grey;
+}
+
+.echiquier td::after {
+    content: "";
+    display: block;
+    margin-top: 100%;
+}
+
+.echiquier td div {
+    position: absolute;
+    /* display: table-cell;*/
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: lightgrey;
+    text-align: center;
+}
+
+.pion {
+    width: 80%;
+    margin-top: 10%;
+}
+
+.center {
+    text-align: center;
+}
+
+.alert {
+    padding: 5px 20px;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+h2 {
+    margin-top: 0px;
+}
+
+header {
+    margin: 35px 0px;
+}
+
+#hd {
+    box-shadow: 5px 5px 5px lightgrey;
+}
