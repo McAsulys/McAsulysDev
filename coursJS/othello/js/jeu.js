@@ -46,8 +46,8 @@ function afficheInformationsSurLaConsole(echiquier) { //WORK !
     console.log("Nb blancs : " + nbPionsDeCouleur(echiquier, BLANC));
 
     // Pour voir si gagneAGauche fonctionne
-    console.log(gagneAGauche(echiquier, 3, 3, NOIR)); // renvoie un tableau VIDE
-    console.log(gagneAGauche(echiquier, 4, 6, BLANC)); // renvoie un tableau contenant les coordonnées [(5,4)]
+    //console.log(gagneDirection(echiquier, 3, 3, NOIR)); // renvoie un tableau VIDE
+    //console.log(gagneDirection(echiquier, 4, 6, BLANC)); // renvoie un tableau contenant les coordonnées [(5,4)]
 
 }
 
@@ -83,77 +83,26 @@ function nbPionsDeCouleur(echiquier, couleur) { //WORK !
  ********************************************************************************
  */
 
+function gagneDirection(echiquier, lig, col, couleur, deltaL, deltaC){
+  var tmp = [];
+  let oppose = couleur == BLANC ? NOIR : BLANC;
+  col += deltaC;
+  lig += deltaL;
+  while (col < 9 && col > 0 && lig < 9 && lig > 0 && echiquier[lig][col] == oppose) {
+    console.log(lig +" " +col);
+    let c = new Coordonnees(lig,col);
+    tmp.push(c);
 
-
-function gagneADroite(echiquier, lig, col, couleur) {
-    var tmp = [];
-    var oppose = couleur == BLANC ? NOIR : BLANC;
-    col++;
-
-    while (col < 9 && echiquier[lig][col] == oppose) {
-      let c = new Coordonnees(lig,col);
-      tmp.push(c);
-
-      col++; //on se décale à droite
-    }
-
-    if(col < 9 || echiquier[lig][col] != couleur){
-      return [];
-    }
-    return tmp;
+    col += deltaC;
+    lig += deltaL;
+  }
+  if (col >= 9 || col <= 0 || lig >= 9 || lig <= 0 || echiquier[lig][col] != couleur) {
+    return [];
+  }
+  return tmp;
 }
 
-function gagneAGauche(echiquier, lig, col, couleur) {
-    var tmp = [];
-    var oppose = couleur == BLANC ? NOIR : BLANC;
-    col--;
 
-    while (col > 0 && echiquier[lig][col] == oppose) {
-      let c = new Coordonnees(lig,col);
-      tmp.push(c);
-
-      col--;
-    }
-
-    if (col > 0 || echiquier[lig][col] != couleur) {
-      return [];
-    }
-
-    return tmp;
-}
-
-function gagneVertical(echiquier, lig, col, couleur, deltaL) {
-    var tmp = [];
-    var oppose = couleur == BLANC ? NOIR : BLANC;
-    if (deltaL == 1) {
-      lig++;
-      while (lig < 9 && echiquier[lig][col] == oppose) {
-        let c = new Coordonnees(lig,col);
-        tmp.push(c);
-
-        lig++;
-      }
-      if(col < 9 || echiquier[lig][col] != couleur){
-        return [];
-      }
-    }
-    else if (deltaL == -1) {
-      lig--;
-      while (lig > 0 && echiquier[lig][col] == oppose) {
-        let c = new Coordonnees(lig,col);
-        tmp.push(c);
-
-        lig--;
-      }
-      if (lig > 0 || echiquier[lig][col] != couleur) {
-        return [];
-      }
-    }
-    // La même chose mais on utilise un deltaL=1 pour descendre et egal à -1 pour monter
-    // dernière question
-    return tmp;
-
-}
 
 /**
  ********************************************************************************
@@ -166,9 +115,15 @@ function gagneVertical(echiquier, lig, col, couleur, deltaL) {
 function casesGagnees(echiquier, lig, col, couleur) {
     var tmp = [];
 
+    for(let i = -1; i<2; i++){
+      for(let j = -1; j<2; j++){
+        if (j !=0 || i != 0) {
+          tmp = tmp.concat(gagneDirection(echiquier,lig,col,couleur,i,j))
+        }
+      }
+    }
     // On appelle gagneAGauche, gagneADroite
     // On utilise la fonction concat des tableaux
-
     return tmp;
 }
 
@@ -185,6 +140,16 @@ function casesGagnees(echiquier, lig, col, couleur) {
 
 function casesPossibles(echiquier, couleur) {
     var tmp = [];
+
+    for (var lig = 1; lig <= 8 ; lig++) {
+      for (var col = 1; col <= 8 ; col++) {
+        if(echiquier[lig][col] == 0 && casesGagnees(echiquier, lig, col, couleur).length > 0){
+          let c = new Coordonnees(lig,col);
+          tmp.push(c);
+        }
+      }
+    }
+
     // pour toutes les lignes
     // Pour toutes les colonnes
     // Si la case est vide
@@ -207,6 +172,10 @@ function casesPossibles(echiquier, couleur) {
 function joueurVeutJouerEn(echiquier, lig, col, couleur) {
     // On peut jouer la si on gagen des cases à cette position
 
+    if(casesGagnees(echiquier, lig, col, couleur).length > 0){
+      return true;
+    }
+    return false;
 }
 
 /**
@@ -223,12 +192,19 @@ function joueurVeutJouerEn(echiquier, lig, col, couleur) {
 */
 
 function etatDeLaPartie(echiquier) {
-    // stocker dans une variable le nombre de pions blancs et noirs
+    let nbNoir = nbPionsDeCouleur(echiquier, NOIR);
+    let nbBlanc = nbPionsDeCouleur(echiquier, BLANC);
 
-    // Conditions pour savoir si l apartie est finie
+    if(casesPossibles(echiquier, BLANC).length == 0 && casesPossibles(echiquier, NOIR).length == 0){
+      return FINI;
+    }
 
-
-    // Conditions pour NOIRNEPEUTPASJOUER et  BLANCNEPEUTPASJOUER
+    if(casesPossibles(echiquier, NOIR).lenth == 0){
+      return NOIRNEPEUTPASJOUER;
+    }
+    if(casesPossibles(echiquier, BLANC).lenth == 0){
+      return BLANCNEPEUTPASJOUER;
+    }
 
 
     return NORMAL; // Cas normal

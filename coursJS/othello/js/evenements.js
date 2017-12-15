@@ -20,7 +20,7 @@ var game = {
     divs: [], // Les divs dans lesquelles on met les images
     echiquier: [], // Pour l'algo
     aQuiLeTour: BLANC, // Les blancs commencent
-    enCours: false, // vrai si un joueur vient de cliquer, 
+    enCours: false, // vrai si un joueur vient de cliquer,
 
 
     /*
@@ -179,7 +179,7 @@ var game = {
                 winner = "BLACK IS THE WINNER";
             else
             if (nbB > nbN)
-                winner = ">HITE IS THE WINNER";
+                winner = "WHITE IS THE WINNER";
             else winner = "DRAW";
             $("#info").html(winner).animate({
                 opacity: 1
