@@ -6,32 +6,50 @@ body{
 /***** PRE HEADER ******/
 .pre_header{
   display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+
   background-color: #373534;
   color: #adaaa8;
+
+
 }
 .pre_header_telephone{
   background-color: #6d6a68;
   padding: 10px;
+  padding-bottom: 15px;
 }
 .pre_header_email{
+  flex-grow: 1;
+
   padding: 10px;
 }
 .pre_header_account{
+  display: block;
+  background-color: #6d6a68;
 
+  color: inherit;
+  text-decoration: none;
+
+  padding: 10px;
 }
 
 /***** HEADER ******/
 
 .header{
   display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .logo{
-  height: 50px;
+  width: 280px;
 }
 .header_menue{
   display: flex;
+  justify-content: space-around;
+  flex-grow: 0.5;
+
   list-style: none;
-  flex-direction: row;
 }
 .header_menue div{
   text-transform: uppercase;
@@ -39,6 +57,14 @@ body{
 .basket{
   display: flex;
   align-items: center;
+}
+.icon-magnifying-glass{
+  margin-right: 10px;
+  font-size: 1.5em;
+
+}
+.icon-paper-bag{
+  font-size: 1.5em;
 }
 .basket_text{
   margin: 10px;
