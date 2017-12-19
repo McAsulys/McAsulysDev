@@ -73,3 +73,36 @@ body{
   text-transform: uppercase;
   font-weight: bold;
 }
+
+/***** COLLECTION ****/
+
+.collection{
+  display: grid;
+  grid-template-columns: 35% 15% 25% 25%;
+  grid-template-areas:
+    "nouvellecollection nouvellecollection canape_3_place banc_blanc"
+    "nouvellecollection nouvellecollection canape_3_place chaise"
+    "zio tabouret tabouret tabouret"
+    "totem tabouret tabouret tabouret"
+}
+.chaise{
+  grid-area: chaise;
+}
+.banc_blanc{
+  grid-area: banc_blanc;
+}
+.nouvellecollection{
+  grid-area: nouvellecollection;
+}
+.canape_3_place{
+  grid-area: canape_3_place;
+}
+.zio{
+  grid-area: zio;
+}
+.totem{
+  grid-area: totem;
+}
+.tabouret{
+  grid-area: tabouret;
+}
