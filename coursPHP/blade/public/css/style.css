@@ -1,0 +1,11 @@
+.container{
+  display: flex;
+  background-color: #444;
+  color: #ddd;
+  padding: 30px;
+}
+.list_film{
+  margin: auto;
+  flex-direction: column;
+  flex-grow: 1;
+}
