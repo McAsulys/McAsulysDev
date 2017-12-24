@@ -46,13 +46,14 @@ body{
 }
 .header_menue{
   display: flex;
-  justify-content: space-around;
+  margin-left: 80px;
   flex-grow: 0.5;
 
   list-style: none;
 }
 .header_menue div{
   text-transform: uppercase;
+  padding-left: 40px;
 }
 .basket{
   display: flex;
@@ -61,6 +62,7 @@ body{
 .icon-magnifying-glass{
   margin-right: 10px;
   font-size: 1.5em;
+
 
 }
 .icon-paper-bag{
@@ -97,6 +99,21 @@ body{
 .canape_3_place{
   grid-area: canape_3_place;
 }
+.canape_3_place_prix{
+  width: 100px;
+  height: 100px;
+  background-color: #62c5de;
+  color: white;
+  border-radius: 50%;
+
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.canape_3_place_prix_old{
+  text-decoration: line-through;
+}
 .zio{
   grid-area: zio;
 }
@@ -105,4 +122,73 @@ body{
 }
 .tabouret{
   grid-area: tabouret;
+}
+
+/***** MOMENT ******/
+
+.moment_menue{
+  display: flex;
+  width: 35%;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+.moment_menue a{
+  text-decoration: none;
+  color: #6d6a68;
+  font-weight: bold;
+  text-transform: uppercase;
+
+}
+
+.moment{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+.moment_img{
+  width: 280px;
+  height: 280px;
+}
+.moment_nom{
+  color: #6d6a68;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+.moment_prix{
+  font-size: 1.5em;
+  margin-left: 10px;
+}
+
+/**** BESTSELLER *****/
+.bestseller{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+.bestseller_titre{
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.bestseller_img{
+  width: 220px;
+  height: 220px;
+}
+.bestseller_nom{
+  color: #6d6a68;
+  margin-left: 10px;
+  margin-top: 10px;
+  font-size: 0.8em;
+}
+.bestseller_prix{
+  margin-left: 10px;
+  font-weight: bold;
+}
+.bestseller_tile{
+  position: relative;
+}
+.bestseller_hover{
+  display: flex;
+  height: 50px;
+  position: absolute;
+  bottom: 30px;
 }
