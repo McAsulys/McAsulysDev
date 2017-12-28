@@ -1,6 +1,9 @@
 body{
-  width: 1200px;
   margin: auto;
+}
+.content{
+  margin: auto;
+  width: 1000px;
 }
 
 /***** PRE HEADER ******/
@@ -46,8 +49,7 @@ body{
 }
 .header_menue{
   display: flex;
-  margin-left: 80px;
-  flex-grow: 0.5;
+  width: 600px;
 
   list-style: none;
 }
@@ -128,7 +130,7 @@ body{
 
 .moment_menue{
   display: flex;
-  width: 35%;
+  width: 50%;
   justify-content: space-between;
   margin-top: 30px;
 }
@@ -146,8 +148,8 @@ body{
   margin-top: 20px;
 }
 .moment_img{
-  width: 280px;
-  height: 280px;
+  width: 240px;
+  height: 240px;
 }
 .moment_nom{
   color: #6d6a68;
@@ -170,8 +172,8 @@ body{
   font-weight: bold;
 }
 .bestseller_img{
-  width: 220px;
-  height: 220px;
+  width: 190px;
+  height: 190px;
 }
 .bestseller_nom{
   color: #6d6a68;
@@ -186,9 +188,83 @@ body{
 .bestseller_tile{
   position: relative;
 }
-.bestseller_hover{
-  display: flex;
-  height: 50px;
+.bestseller_hover_trigger{
   position: absolute;
-  bottom: 30px;
+  opacity: 0;
+  height: 190px;
+  width: 190px;
+  bottom: 45px;
+}
+.bestseller_hover{
+  background-color: #eee;
+  display: flex;
+  justify-content: space-around;
+  height: 50px;
+  width: 190px;
+  position: absolute;
+  bottom: 0px;
+  text-align: center;
+  opacity: inherit;
+}
+.bestseller_hover_trigger:hover{ /*trouver un moyen de gerer le hover */
+  opacity: 1;
+  transition: opacity 200ms;
+}
+.bestseller_buy{
+  border: 1px solid #eee;
+  flex-grow: 3;
+  padding-top: 15px;
+  font-size: 1em;
+  text-align: left;
+  margin-left: 20px;
+}
+.icon-exchange-arrows{
+  border: 1px solid #eee;
+  flex-grow: 1;
+  padding-top: 15px;
+}
+.icon-heart{
+  border: 1px solid #eee;
+  flex-grow: 1;
+  padding-top: 15px;
+}
+
+/**** PARTENAIRE ****/
+.suedois{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+/***** FOOTER ******/
+footer{
+  padding-top: 40px;
+  background-color: #f6f6f6;
+}
+/***** REFERENCE *****/
+.reference{
+  margin: auto;
+  margin-bottom: 40px;
+  width: 1000px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.reference_tile{
+  display: flex;
+  flex-direction: row;
+}
+.reference_icon{
+  font-size: 2em;
+  margin-right: 10px;
+}
+.reference_text{
+  display: flex;
+  flex-direction: column;
+}
+.preference_titre{
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.preference_comment{
+  font-size: 0.8em;
 }
