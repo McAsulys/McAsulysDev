@@ -206,7 +206,7 @@ body{
   text-align: center;
   opacity: inherit;
 }
-.bestseller_hover_trigger:hover{ /*trouver un moyen de gerer le hover */
+.bestseller_hover_trigger:hover{
   opacity: 1;
   transition: opacity 200ms;
 }
