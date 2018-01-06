@@ -1,5 +1,6 @@
 body{
   margin: auto;
+  font-family: 'Montserrat', sans-serif;
 }
 .content{
   margin: auto;
@@ -56,6 +57,7 @@ body{
 .header_menue div{
   text-transform: uppercase;
   padding-left: 40px;
+  font-size: 0.8em;
 }
 .basket{
   display: flex;
@@ -82,7 +84,9 @@ body{
 
 .collection{
   display: grid;
-  grid-template-columns: 35% 15% 25% 25%;
+  grid-template-columns: 34% 15% 20% 25%;
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
   grid-template-areas:
     "nouvellecollection nouvellecollection canape_3_place banc_blanc"
     "nouvellecollection nouvellecollection canape_3_place chaise"
@@ -126,6 +130,255 @@ body{
   grid-area: tabouret;
 }
 
+.Acheter{
+  display: flex;
+  font-size: 0.7em;
+}
+.Acheter a{
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+.Acheter div{
+  color: white;
+  margin-left: 5px;
+  font-size: 0.2em;
+  border: 1px solid white;
+  padding: 4px;
+  border-radius: 50%;
+}
+
+.nouvellecollection{
+  background-image: url("images/meubles/nouvellecollection.jpg");
+  background-size: 610px;
+  padding: 40px;
+  height: 360px;
+}
+.nouvellecollection_idea_design{
+  background-color: #535353;
+  color: white;
+  padding: 8px;
+  margin-top: 180px;
+  text-transform: uppercase;
+  font-weight: bold;
+  width: 180px;
+  font-size: 0.7em;
+  letter-spacing: 2px;
+}
+.nouvellecollection_nouvelle{
+  font-weight: bold;
+  font-size: 3em;
+  color: white;
+}
+.nouvellecollection_collection{
+  color: white;
+  font-size: 2.2em;
+}
+.nouvellecollection_texte{
+  width: 150px;
+  font-size: 0.6em;
+  margin-top: 5px;
+  color: white;
+}
+.nouvellecollection_prix{
+  margin-top: 20px;
+  color: white;
+  font-size: 1.5em;
+}
+
+.canape_3_place{
+  background-image: url("images/meubles/canape3places.jpg");
+  background-size: 630px;
+  background-position: 25% 20%;
+  padding: 20px;
+}
+.canape_3_place_canape_fauteuil{
+  color: white;
+  text-transform: uppercase;
+  font-size: 0.8em;
+}
+.canape_3_place_en_cuir{
+  color: white;
+  font-size: 1.2em;
+  width: 70%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.canape_3_place_prix{
+  margin-top: 100px;
+  margin-left: 40%;
+}
+
+.banc_blanc{
+  background-image: url("images/meubles/coussinsblancs.jpg");
+  background-size: 400px;
+  background-position: -10px 420px;
+  padding: 10px;
+  height: 200px;
+}
+.banc_blanc_titre{
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-top: 10px;
+}
+.banc_blanc_coussin{
+  font-weight: bold;
+  margin-top: 5px;
+}
+.banc_blanc_prix{
+  color: #991015;
+  margin-top: 80px;
+  margin-left: 140px;
+  font-size: 1.6em;
+}
+.banc_blanc_acheter{
+  margin-top: 10px;
+  margin-left: 140px;
+}
+.banc_blanc_acheter a{
+  color: white;
+  font-size: 0.8em;
+  text-decoration: none;
+  background-color: black;
+  padding: 5px 10px 5px 10px;
+  text-transform: uppercase;
+}
+
+.chaise{
+  background-image: url("images/meubles/chaise-accourdoirs.jpg");
+  height: 170px;
+  padding: 15px;
+  background-size: 220px;
+  background-position: 70px 59px;
+  background-repeat: no-repeat;
+}
+.chaise_titre{
+  color: #2c3e66;
+  font-weight: bold;
+  font-size: 0.9em;
+  width: 100px;
+  text-transform: uppercase;
+}
+.chaise_price_old{
+  color: #aaa;
+  text-decoration: line-through;
+  margin-top: 50px;
+}
+.chaise_price_actuel{
+  color: #2c3e66;
+  font-size: 1.5em;
+  margin-top: 5px;
+}
+.chaise_acheter{
+  display: flex;
+  margin-top: 15px;
+}
+.chaise_acheter div{
+  color: black;
+  margin-left: 5px;
+  border: 1px solid black;
+  padding: 6px;
+  font-size: 0.8em;
+  border-radius: 50%;
+}
+.chaise_acheter a{
+  text-decoration: none;
+  color: #2c3e66;
+  margin-top: 5px;
+}
+
+.zio{
+  background-color: #c6e6a1;
+  display: flex;
+  text-align: right;
+  padding: 5px;
+}
+.zio_textblock{
+  width: 180px;
+  margin-top: 20px;
+}
+.zio_image img{
+  width: 145px;
+}
+.zio_titre{
+  color: white;
+  font-size: 1.5em;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.zio_chaise{
+  color: white;
+  letter-spacing: 2px;
+}
+.zio_acheter{
+  margin-top: 50px;
+  margin-left: 105px;
+}
+.zio_acheter div{
+  background-color: rgba(0,0,0,0.1);
+}
+
+.totem{
+  background-image: url("images/meubles/totemfloor.jpg");
+  background-size: 380px;
+  background-position: -20px -80px;
+  padding: 30px;
+}
+.totem_titre{
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-align: right;
+  font-size: 1.5em;
+  margin-top: 10px;
+}
+.totem_lampes{
+  font-size: 1em;
+  letter-spacing: 3px;
+  font-weight: bold;
+  text-align: right;
+}
+.totem_achetez{
+  margin-left: 215px;
+  margin-top: 120px;
+}
+.totem_achetez a{
+  color: #999;
+}
+.totem_achetez div{
+  background-color: white;
+  color: #777;
+  border-color: #999;
+}
+
+.tabouret{
+  background-image: url("images/meubles/tabouret.jpg");
+  background-position: -240px -200px;
+  color: #444;
+}
+.tabouret_filtre{
+  background-color: rgba(255,255,255,0.5);
+  padding: 30px;
+  height: 370px
+}
+.tabouret_titre{
+  font-size: 3em;
+  font-weight: bold;
+}
+.tabouret_prix_design{
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 0.7em;
+  margin-bottom: 10px;
+}
+.tabouret_cool{
+  font-size: 3em;
+}
+.tabouret_fesse_amour{
+  font-size: 0.8em;
+}
 /***** MOMENT ******/
 
 .moment_menue{
@@ -157,10 +410,58 @@ body{
   margin-top: 10px;
 }
 .moment_prix{
-  font-size: 1.5em;
+  font-size: 1em;
+  font-weight: bold;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+/**** PRE_BESTSELLER *****/
+.before_bestseller{
+  display: flex;
+  margin-top: 50px;
+}
+.before_bestseller_tile{
+  width: 33.3333%;
+  padding: 20px;
+}
+.before_bestseller_title{
+  font-weight: bold;
+  font-size: 1.4em;
+  margin-bottom: 50px;
+}
+.before_bestseller_categorie{
+  font-size: 1em;
+  color: #aaa;
+}
+.before_bestseller_see{
+  display: flex;
+}
+.before_bestseller_see a{
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #aaa;
+  margin-top: 5px;
+}
+.before_bestseller_see div{
+  background-color: white;
+  border-radius: 50%;
+  padding: 5px;
+  border: 1px solid grey;
   margin-left: 10px;
 }
-
+.lamp{
+  color: white;
+  text-transform: uppercase;
+}
+.Horloge{
+  background-image: url("images/meubles/horloges.png");
+}
+.Tables{
+  background-image: url("images/meubles/tablebase.jpg");
+}
+.Lumiere{
+  background-image: url("images/meubles/lampes.png");
+}
 /**** BESTSELLER *****/
 .bestseller{
   display: flex;
@@ -235,10 +536,105 @@ body{
   flex-direction: row;
   justify-content: space-around;
 }
+/***** PRE_FOOTER ****/
+.footer{
+  padding-top: 50px;
+  background-color: #eee;
+  margin-top: 50px;
+  font-size: 0.7em;
+}
+.otherinfo{
+  width: 1000px;
+  margin: auto;
+  padding-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 50px;
+}
+.otherinfo_title{
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+.otherinfo_link{
+
+  margin-bottom: 20px;
+}
+.otherinfo_link a{
+  text-decoration: none;
+  color: #666;
+}
+.logo_otherinfo{
+  width: 80%;
+}
+.otherinfo_location{
+  display: flex;
+  margin-bottom: 40px;
+  margin-top: 50px;
+}
+.otherinfo_location div{
+  margin-right: 10px;
+}
+.otherinfo_telephone{
+  display: flex;
+}
+.otherinfo_telephone div{
+  margin-right: 10px;
+}
+.otherinfo_mail{
+  display: flex;
+}
+.otherinfo_mail div{
+  margin-right: 10px;
+}
+.otherinfo_form{
+  margin-bottom: 40px;
+}
+.otherinfo_form_mail{
+  padding: 20px;
+  margin: 0;
+  border-radius: 40px 0 0 40px;
+  border-style: none;
+}
+.otherinfo_form_submit{
+  padding: 20px;
+  margin: 0;
+  border-radius: 0 40px 40px 0;
+  color: #eee;
+  border-style: none;
+  background-color: #444;
+}
+.otherinfo_form_submit:hover{
+  color: #444;
+  background-color: #eee;
+  transition: background-color 100ms;
+}
+.follow{
+  text-align: right;
+}
+.iconlist{
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin-left: auto;
+  font-size: 1.4em;
+  color: #888;
+}
 /***** FOOTER ******/
 footer{
-  padding-top: 40px;
-  background-color: #f6f6f6;
+  display: flex;
+  justify-content: space-between;
+  width: 1000px;
+  margin: auto;
+  padding: 10px 010px 0;
+}
+.payement{
+  display: flex;
+  justify-content: space-between;
+  font-size: 2em;
+  width: 25%;
+}
+.copyright span{
+  font-weight: bold;
 }
 /***** REFERENCE *****/
 .reference{
