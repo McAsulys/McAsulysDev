@@ -458,12 +458,18 @@ body{
 }
 .Horloge{
   background-image: url("images/meubles/horloges.png");
+  background-size: 350px;
+  background-position: 0px -20px;
 }
 .Tables{
   background-image: url("images/meubles/tablebase.jpg");
+  background-size: 370px;
+  background-position: 0 -50px;
 }
 .Lumiere{
   background-image: url("images/meubles/lampes.png");
+  background-size: 460px;
+  background-position: -20px 0px;
 }
 /**** BESTSELLER *****/
 .bestseller{
