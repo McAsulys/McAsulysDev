@@ -75,6 +75,9 @@ body{
 .basket_text{
   margin: 10px;
 }
+.basket_text_content{
+  font-size: 0.6em;
+}
 .blackTitle{
   text-transform: uppercase;
   font-weight: bold;
