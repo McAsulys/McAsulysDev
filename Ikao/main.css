@@ -6,6 +6,11 @@ body{
   margin: auto;
   width: 1000px;
 }
+@media screen and (max-width: 780px){
+  .content{
+    width: 565px;
+  }
+}
 
 /***** PRE HEADER ******/
 .pre_header{
@@ -17,6 +22,11 @@ body{
   color: #adaaa8;
 
 
+}
+@media screen and (max-width: 780px){
+  .pre_header{
+
+  }
 }
 .pre_header_telephone{
   background-color: #6d6a68;
@@ -44,6 +54,16 @@ body{
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+@media screen and (max-width: 780px){
+  .header{
+    flex-direction: column;
+    align-items: left;
+    margin: auto;
+  }
+  .logo{
+    width: 100px;
+  }
 }
 .logo{
   width: 280px;
@@ -382,6 +402,30 @@ body{
 .tabouret_fesse_amour{
   font-size: 0.8em;
 }
+@media screen and (max-width: 780px){
+    .collection{
+      margin: auto;
+      width: 565px;
+      grid-gap: 0;
+      grid-template-columns: 50% 50%;
+      grid-template-areas:
+        "nouvellecollection nouvellecollection"
+        "nouvellecollection nouvellecollection"
+        "canape_3_place banc_blanc"
+        "canape_3_place chaise"
+        "zio zio"
+        "totem totem"
+        "tabouret tabouret"
+        "tabouret tabouret"
+    }
+    .totem{
+      background-size: 600px;
+    }
+    .totem div{
+      margin-left: 25px;
+      text-align: left;
+    }
+}
 /***** MOMENT ******/
 
 .moment_menue{
@@ -407,6 +451,24 @@ body{
   width: 240px;
   height: 240px;
 }
+@media screen and (max-width: 780px){
+  .moment_menue{
+    width: 100%;
+  }
+  .moment{
+    flex-direction: column;
+  }
+  .moment_img{
+    width: 60%;
+    height: auto;
+  }
+  .moment_tile{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+}
 .moment_nom{
   color: #6d6a68;
   margin-left: 10px;
@@ -422,6 +484,15 @@ body{
 .before_bestseller{
   display: flex;
   margin-top: 50px;
+}
+@media screen and (max-width: 780px){
+  .before_bestseller{
+    flex-direction: column;
+  }
+  .before_bestseller_tile{
+    margin: auto;
+    margin-top: 10px;
+  }
 }
 .before_bestseller_tile{
   width: 33.3333%;
@@ -476,6 +547,15 @@ body{
   display: flex;
   justify-content: space-between;
   margin-top: 30px;
+}
+@media screen and (max-width: 780px) {
+  .bestseller{
+    flex-wrap: wrap;
+  }
+  .bestseller_tile{
+    margin: auto;
+    margin-bottom: 10px;
+  }
 }
 .bestseller_titre{
   text-transform: uppercase;
@@ -544,6 +624,12 @@ body{
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+}
+@media screen and (max-width: 780px) {
+  .suedois{
+    flex-wrap: wrap;
+
+  }
 }
 /***** PRE_FOOTER ****/
 .footer{
@@ -628,6 +714,15 @@ body{
   font-size: 1.4em;
   color: #888;
 }
+@media screen and (max-width: 780px){
+  .iconlist{
+    flex-wrap: wrap;
+  }
+  .otherinfo{
+    flex-wrap: wrap;
+    width: auto;
+  }
+}
 /***** FOOTER ******/
 footer{
   display: flex;
@@ -672,4 +767,15 @@ footer{
 }
 .preference_comment{
   font-size: 0.8em;
+}
+@media screen and (max-width: 780px){
+  footer{
+    flex-wrap: wrap;
+    width: auto;
+  }
+  .payement{flex-wrap: wrap;}
+  .reference{
+    flex-wrap: wrap;
+    width: auto;
+  }
 }
