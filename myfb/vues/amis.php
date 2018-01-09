@@ -1,11 +1,11 @@
 <?php
-  include("../config/header.php");
+  //include("../config/header.php");
  ?>
 
 affichage des amis <br>
 <?php
-include("../config/config.php");
-include("../config/bd.php");
+//include("../config/config.php");
+//include("../config/bd.php");
 $sql = "SELECT login FROM user
         JOIN lien ON user.id = idUtilisateur2
         WHERE idUtilisateur1 = ?;";

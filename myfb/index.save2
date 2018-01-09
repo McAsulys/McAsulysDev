@@ -1,0 +1,86 @@
+<?php
+
+	include("config/config.php");
+	include("config/bd.php");
+	session_start();
+
+?>
+
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+			<meta http-equiv="X-UA-Compatible" content="IE=edge">
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <title>Facebook</title>
+		<!-- Bootstrap core CSS -->
+		<link href="./css/bootstrap.min.css" rel="stylesheet">
+
+		<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+		<link href="./css/ie10.css" rel="stylesheet">
+
+
+		<!-- Ma feuille de style à moi -->
+		<link href="./css/style.css" rel="stylesheet">
+
+		<script src="js/jquery-3.2.1.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+	</head>
+
+	<body>
+		<div id="header">
+			<img src="img/Poneyrose.jpg" width="150">
+			<b>Bienvenue sur la place du poney en robe rose</b>
+
+		</div>
+
+
+		<p></p>
+
+	<div id="parent">
+		<div class="amis">
+			<h3><b>Vos poneys</b></h3>
+			<div class="amis">
+				<?php include("vues/amis.php") ?>
+
+			</div>
+		</div>
+
+		<div class="pasDeReponse">
+			<h3><b>En attente</b></h3>
+		</div>
+
+		<div class="attente">
+			<h3><b>Demandes d'amis</b></h3>
+		</div>
+
+		<p></p>
+
+		<div class="recherche">
+			<input type="text" name="amis" placeholder="Recherche de votre poney">
+			<input type="submit" value="Valider">
+			<p><h3><b>Résultat de la recherche :</b></h3></p>
+		</div>
+	</div>
+
+		<div id="footer">
+	    	<div class="twitter">
+			<img src="img/twitter.png">
+			<p> Retrouvez vos poneys sur Twitter !</p>
+			<div class="copyright">
+				Copyright Bénédict Dourlens Lucie Nieto
+			</div>
+			<div class="instagram">
+
+			</div>
+			<div class="pinterest">
+
+			</div>
+		</div>
+
+		</div>
+		</body>
+	</body>
+</html>
