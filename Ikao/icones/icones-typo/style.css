@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?e7n68h');
-  src:  url('fonts/icomoon.eot?e7n68h#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?e7n68h') format('truetype'),
-    url('fonts/icomoon.woff?e7n68h') format('woff'),
-    url('fonts/icomoon.svg?e7n68h#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?8x9hrj');
+  src:  url('fonts/icomoon.eot?8x9hrj#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?8x9hrj') format('truetype'),
+    url('fonts/icomoon.woff?8x9hrj') format('woff'),
+    url('fonts/icomoon.svg?8x9hrj#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -23,69 +23,73 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-.icon-google-plus:before {
+
+.icon-amazon:before {
   content: "\e900";
 }
-.icon-whatsapp:before {
+.icon-discover-logo-of-pay-system:before {
   content: "\e901";
 }
-.icon-linkedin-logo:before {
+.icon-dropbox-logo:before {
   content: "\e902";
 }
-.icon-youtube-logo:before {
+.icon-exchange-arrows:before {
   content: "\e903";
 }
 .icon-facebook-logo:before {
   content: "\e904";
 }
-.icon-twitter-logo-silhouette:before {
+.icon-google-plus:before {
   content: "\e905";
 }
-.icon-mastercard:before {
+.icon-heart:before {
   content: "\e906";
 }
-.icon-visa-pay-logo:before {
+.icon-help-lifeguard-symbol:before {
   content: "\e907";
 }
-.icon-paypal-logo:before {
+.icon-linkedin-logo:before {
   content: "\e908";
 }
-.icon-discover-logo-of-pay-system:before {
+.icon-magnifying-glass:before {
   content: "\e909";
 }
-.icon-placeholder-filled-point:before {
+.icon-mail:before {
   content: "\e90a";
 }
-.icon-paper-bill:before {
+.icon-mastercard:before {
   content: "\e90b";
 }
-.icon-dropbox-logo:before {
+.icon-next:before {
   content: "\e90c";
 }
-.icon-help-lifeguard-symbol:before {
+.icon-paper-bag:before {
   content: "\e90d";
 }
-.icon-plane:before {
+.icon-paper-bill:before {
   content: "\e90e";
 }
-.icon-exchange-arrows:before {
+.icon-paypal-logo:before {
   content: "\e90f";
 }
-.icon-heart:before {
+.icon-phone-receiver:before {
   content: "\e910";
 }
-.icon-next:before {
+.icon-placeholder-filled-point:before {
   content: "\e911";
 }
-.icon-paper-bag:before {
+.icon-plane:before {
   content: "\e912";
 }
-.icon-magnifying-glass:before {
+.icon-twitter-logo-silhouette:before {
   content: "\e913";
 }
-.icon-mail:before {
+.icon-visa-pay-logo:before {
   content: "\e914";
 }
-.icon-phone-receiver:before {
+.icon-whatsapp:before {
   content: "\e915";
+}
+.icon-youtube-logo:before {
+  content: "\e916";
 }

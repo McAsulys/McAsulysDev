@@ -1,0 +1,98 @@
+#header {
+	width: auto;
+	height: 200px;
+	/*background-color: pink;*/
+	text-align: center;
+	font-size: 40pt;
+	position: relative;
+	margin-bottom: 10px;
+	margin-top: 10px;
+	color: pink;
+}
+
+#header img {
+	float: left;
+	margin-top:10px;
+	margin-left: 120px;
+	width : 180px;
+}
+
+body {
+	background-image: ;
+	background-attachment: scroll;
+	opacity: 20%;
+}
+
+#parent {
+	display: flex;
+	flex-direction : row;
+}
+
+.amis {
+	width: 500px;
+	height: 400px;
+	/*background-color: red;*/
+	margin-top : 50px;
+	color: pink;
+	display: block;
+}
+
+.pasDeReponse {
+	width: 500px;
+	height: 400px;
+	/*background-color: yellow;*/
+	margin-top : 50px;
+	color: pink;
+	display: block;
+}
+
+.attente {
+	width: 500px;
+	height: 400px;
+	/*background-color: orange;*/
+	margin-top : 50px;
+	color: pink;
+	display: block;
+}
+
+.recherche {
+	width: 500px;
+	height: 400px;
+	/*background-color: grey;*/
+	margin-top : 50px;
+	color: pink;
+	display: block;
+}
+
+#footer {
+	/* border:1px solid red; */
+	height:150px;
+	width: auto;
+	background-color: pink;
+	margin-top: 140px;
+}
+
+/*#footer .facebook img {
+	width:70px;
+	margin-left: 20%;
+	margin-top: 20px;
+}*/
+
+#footer .twitter img {
+	width: 70px;
+	margin-left: 52%;
+	margin-top: 20px;
+	margin-bottom: 40px;
+}
+
+.twitter p{
+	margin-left: 46%;
+	color: white;
+	font-size: 15pt;
+	margin-bottom: 25%;
+}
+
+.copyright{
+	height: 20px;
+	margin-top:-470px;
+}
