@@ -6,12 +6,15 @@ body{
   margin: auto;
   width: 1000px;
 }
+<<<<<<< HEAD
+=======
 @media screen and (max-width: 780px){
   .content{
     width: 565px;
   }
 }
 
+>>>>>>> 3b1b08aef74d3a4186976c74653cf6d30fdb89c1
 /***** PRE HEADER ******/
 .pre_header{
   display: flex;
