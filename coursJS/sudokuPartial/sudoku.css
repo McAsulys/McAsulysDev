@@ -1,0 +1,88 @@
+.comment{
+  text-align: center;
+  padding: 10px;
+  box-shadow: 5px 5px 5px lightgrey;
+  margin: auto;
+  margin-bottom: 20px;
+  width: 40%;
+  background-color: #eee;
+}
+#board {
+    width: 81%;
+    margin: 0 auto;
+    box-shadow: 5px 5px 5px lightgrey;
+}
+
+#board td {
+    width: 9%;
+    position: relative;
+    border: 1px solid lightgrey;
+}
+
+#board td::after {
+    content: "";
+    display: block;
+    margin-top: 100%;
+}
+
+#board td div {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+
+[data-r] span {
+    display: block;
+    width: 80%;
+    margin-left: 10%;
+    font-size: 3rem;
+    margin-top: 20%;
+}
+
+[data-r] span.fixed {
+    color: red;
+}
+
+h1,
+h2 {
+    text-align: center;
+}
+
+h2 {
+    margin-top: -5px;
+}
+
+header {
+    margin: 35px 0px;
+}
+
+header div {
+    box-shadow: 5px 5px 5px lightgrey !important;
+}
+
+.row+.row {
+    margin-top: 10px;
+}
+
+#digits div button.active {
+    background-color: darkgreen;
+}
+
+#load {
+    margin-top: 20px;
+}
+
+#score {
+    text-align: center;
+}
+
+#error {
+    opacity: 0;
+    padding: 5px 20px;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+}

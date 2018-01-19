@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sudoku</title>
+    <link rel="stylesheet" href="ressources/jquery-ui.min.css">
+    <link rel="stylesheet" href="ressources/bootstrap.min.css">
+    <link rel="stylesheet" href="sudoku.css">
+</head>
+
+<body>
+    <div class="container">
+        <header class="row">
+            <div class="col-md-offset-2 col-md-8 well">
+                <h1>Sudoku Game</h1>
+            </div>
+        </header>
+        <div class="comment">
+          A vous de jouer !
+        </div>
+        <div class="row">
+            <aside class="col-md-3">
+                <div class="well">
+                    <button id="restart" type="button" class="btn btn-success btn-lg btn-block">Restart</button>
+                </div>
+                <div id="score" class="well">
+                    <h2>Grid</h2>
+                    <textarea rows="6" placeholder="003020600 900305001 001806400 008102900 700000008 006708200 002609500 800203009 005010300"></textarea>
+                    <button id="load" type="button" class="btn btn-success btn-lg">Load</button>
+                </div>
+                <div id="digits" class="well">
+                    <h2>Select</h2>
+                    <div class="row">
+                        <button type="button" class="btn btn-success col-md-offset-2 col-md-2 active"> 1 </button>
+                        <button type="button" class="btn btn-success col-md-offset-1 col-md-2"> 2 </button>
+                        <button type="button" class="btn btn-success col-md-offset-1 col-md-2"> 3 </button>
+                    </div>
+                    <div class="row">
+                        <button type="button" class="btn btn-success col-md-offset-2 col-md-2"> 4 </button>
+                        <button type="button" class="btn btn-success col-md-offset-1 col-md-2"> 5 </button>
+                        <button type="button" class="btn btn-success col-md-offset-1 col-md-2"> 6 </button>
+                    </div>
+                    <div class="row">
+                        <button type="button" class="btn btn-success col-md-offset-2 col-md-2"> 7 </button>
+                        <button type="button" class="btn btn-success col-md-offset-1 col-md-2"> 8 </button>
+                        <button type="button" class="btn btn-success col-md-offset-1 col-md-2"> 9 </button>
+                    </div>
+                </div>
+                <p id="error" class="alert alert-danger" role="alert" />
+            </aside>
+            <main class="col-md-9" />
+        </div>
+    </div>
+    <script src="ressources/jquery-2.1.4.min.js"></script>
+    <script src="ressources/jquery-ui.min.js"></script>
+    <script src="ressources/bootstrap.min.js"></script>
+    <script src="sudokuDiff.js"></script>
+</body>
+
+</html>
