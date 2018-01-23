@@ -137,6 +137,12 @@
         lazer.x += _vitesse;
         if (lazer.x > stage.canvas.width) {
           _container.removeChildAt(i);
+        }else {
+          var isTouched = checkCollision(lazer, ennemis.currentEnnemi);
+          if(isTouched){
+            _container.removeChildAt(i);
+            ennemis.die();
+          }
         }
       }
     }
@@ -234,6 +240,21 @@
       }else {
         _animCat.visible = false;
         _animGuys.visible = true;
+        _animGuys.gotoAndStop(random);
+        obj.currentEnnemi = _animGuys;
+      }
+    }
+
+    function _die(){
+      obj.currentEnnemi.scaleX = obj.currentEnnemi.scaleY = 1;
+      createjs.Tween.get(obj.currentEnnemi)
+        .to({scaleX : 1.5, scaleY : 1.5}, 300, createjs.Ease.quartOut)
+        .to({scaleX : 1, scaleY : 1}, 800, createjs.Ease.elasticOut);
+
+      if (obj.currentEnnemi.name == "cat") {
+        console.log("CHAT !");
+      }else {
+        console.log("GUY !");
       }
     }
 
@@ -246,6 +267,8 @@
     var obj = {
       create: _create,
       update: _update,
+      currentEnnemi : null,
+      die: _die,
     }
     return obj;
   }

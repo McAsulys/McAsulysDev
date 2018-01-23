@@ -13,7 +13,7 @@ function getRandomRange(min, max) {
 
 
 //detecte la collision entre 2 objets
-function checkCollision2(obj1, obj2) {
+function checkCollision(obj1, obj2) {
     var pt1 = obj1.localToGlobal(0, 0);
     var bound1 = obj1.getBounds();
     var pt2 = obj2.localToGlobal(0, 0);
