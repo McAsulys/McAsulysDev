@@ -36,7 +36,7 @@ function checkCollision2(obj1, obj2) {
 
 ///////////////////
 
-/*function MonObjetManager() {
+function MonObjetManager() {
 
     var _maproprietePrivee = "valeur";
 
@@ -57,7 +57,7 @@ function checkCollision2(obj1, obj2) {
     function _mafunctionprivee() {
         console.log("c'est privé")
     }
-}*/
+}
 
 
 ///////////////////
