@@ -3,40 +3,91 @@
 let character = [
   {
     name: "RedCubbage",
+    type: "earth",
+    sex: "female",
     age: 22,
+    owner : "Topaz",
+    own : [],
   },
   {
     name: "Topaz",
+    type: "unicorn",
+    sex : "female",
     age: 36,
+    owner : "NONE",
+    own : [
+      "RedCubbage",
+      "WingHell",
+      "WishAmetist",
+    ],
   },
   {
     name: "Ruby",
+    type: "earth",
+    sex : "female",
     age: 39,
+    owner : "NONE",
+    own : [],
   },
   {
     name: "WingHell",
+    type: "fakepegasus",
+    sex: "male",
     age: 24,
+    owner : "Topaz",
+    own : [
+      "BlackCacis",
+      "WhiteSnow",
+    ],
   },
   {
     name: "BlackCacis",
+    type: "earth",
+    sex: "female",
     age: 16,
+    owner : "WingHell",
+    own: [],
   },
   {
     name: "WhiteSnow",
+    type: "hippogryphe",
+    sex: "female",
     age: 21,
+    owner: "WingHell",
+    own: [],
   },
   {
     name: "Helium",
+    type: "pegasus",
+    sex: "female",
     age: 22,
+    owner : "NONE",
+    own : [],
   },
   {
     name: "TayashiGinko",
+    type: "unicorn",
+    sex: "female",
     age: 21,
+    owner: "NONE",
+    own : [],
   },
   {
     name: "WishAmetist",
-    age: 20
+    type: "pegasus",
+    sex: "female",
+    age: 20,
+    owner: "Topaz",
+    own: [],
   },
+  {
+    name: "Obsidian",
+    type: "kirin",
+    sex : "male",
+    age: 34,
+    owner: "NONE",
+    own: [],
+  }
 ];
 
 function sortByField(field, array){
@@ -80,15 +131,17 @@ function averageFromField(field, array){
   * Exeption : le field doit contenire des numerique.
   * Return : number
   */
-  let j = array.reduce((a, b) => a[field] + b[field]);///array.lenght;
-  console.log(j);
+  let filter = array.map(p => p[field]);
+  let sum = filter.reduce((a, b) => a += b);
+  let avg = sum/array.length;
+  return avg;
 }
 
 console.log(averageFromField("age", character));
 
 function extractFromField(field, array){
   /*
-  * Permet d'extraire un tableau avec le champs selectionner.
+  * Permet d'extraire un tableau avec les champs selectionnés.
   * Return : Array;
   */
   if (Array.isArray(field)) { //NOT WORKING
@@ -98,10 +151,10 @@ function extractFromField(field, array){
       for (let i of field) {
         o[i]=p[i];
       }
-      return o;
+      return o; //retourne a tableai d'objet vide.
     }
   }
-  return array.map(p => p[field]);
+  return array.map(p => p[field]); //Work !
 }
 
 //console.log(extractFromField(["name", "age"], character));
@@ -124,5 +177,5 @@ class Pegasus extends Poney{
   }
 }
 
-let wish = new Pegasus("Wish", 20);
-console.log(wish);
+//let wish = new Pegasus("Wish", 20);
+//console.log(wish);
