@@ -1,0 +1,42 @@
+body{
+  background-color: black;
+}
+.card{
+  background-color: purple;
+  padding: 10px;
+  border-radius: 10px;
+  color: orange;
+  width : 400px;
+  margin : 10px;
+}
+#root{
+
+}
+.top{
+  display: flex;
+  flex-direction: row;
+}
+.top div{
+  width: 50%;
+}
+.score{
+  text-align: center;
+  border-radius: 10px;
+  width : 30%;
+  margin: auto;
+}
+.gray{
+  border: 5px solid gray;
+}
+.green{
+  border: 5px solid green;
+}
+.blue{
+  border: 5px solid blue;
+}
+img{
+  width: 120px
+}
+.delete:hover{
+  cursor: pointer;
+}
