@@ -5,6 +5,7 @@
   var stage; //scene du jeu.
   var hero;
   var ennemis;
+  var score;
 
   function initGame(){
     console.log("initGame");
@@ -26,10 +27,14 @@
     createjs.Ticker.setFPS(60); //creer un clock à 60FPS autoreload
     createjs.Ticker.addEventListener("tick",updateStage)
 
-    hero = new SuperHero();
+    /*hero = new SuperHero();
     hero.create();
     ennemis =  new Ennemis();
     ennemis.create();
+    score = new Score();
+    score.create(); */
+    homeScreen = new HomeScreen();
+    homeScreen.create();
   }
 
   function updateStage(){
@@ -115,6 +120,7 @@
     ///////////////////////////
 
     function _shoot(){
+      if (ennemis.canTouched == false)return;
       if (!_container) {
         _container =  new createjs.Container();
         stage.addChild(_container);
@@ -237,6 +243,8 @@
       if (random > 3) {
         _animCat.visible = true;
         _animGuys.visible = false;
+
+        obj.currentEnnemi = _animCat;
       }else {
         _animCat.visible = false;
         _animGuys.visible = true;
@@ -247,14 +255,20 @@
 
     function _die(){
       obj.currentEnnemi.scaleX = obj.currentEnnemi.scaleY = 1;
+      obj.canTouched = false;
       createjs.Tween.get(obj.currentEnnemi)
         .to({scaleX : 1.5, scaleY : 1.5}, 300, createjs.Ease.quartOut)
-        .to({scaleX : 1, scaleY : 1}, 800, createjs.Ease.elasticOut);
+        .to({scaleX : 1, scaleY : 1}, 800, createjs.Ease.elasticOut)
+        .call( function(){
+          obj.canTouched = true;
+        });
 
       if (obj.currentEnnemi.name == "cat") {
         console.log("CHAT !");
+        score.update(-10);
       }else {
         console.log("GUY !");
+        score.update(10);
       }
     }
 
@@ -269,7 +283,132 @@
       update: _update,
       currentEnnemi : null,
       die: _die,
+      canTouched : true,
     }
+    return obj;
+  }
+
+  function Score(){
+    var _text;
+    var _score = 0;
+
+    function _create(){
+      //creation du champ texte
+      _text = new createjs.Text(
+        "Score : 0", //texte
+        "30px bowlby_oneregular", //font-size font-family
+        "#ff7700", //color
+      );
+      _text.x = stage.canvas.width /2;
+      _text.y = 20;
+      _text.textAlign = "center";
+      stage.addChild(_text);
+    }
+    function _update(points){
+      //maj du score
+      _score += points;
+      _text.text = "Score : " + _score;
+    }
+
+    var obj = {
+      create: _create,
+      update: _update,
+    };
+    return obj;
+  }
+
+  function HomeScreen(){
+    var _container;
+    var _btnStart;
+
+    function _create(){
+      _container =  new createjs.Container();
+      _container.x = stage.canvas.width /2;
+      _container.y = stage.canvas.height /2;
+      stage.addChild(_container);
+
+      var text1, text2, animation1, animation2;
+      text1 = new createjs.Text("Mmi Game", "50px bowlby_oneregular", '#ff5382');
+      text1.textAlign = "center";
+      text1.y = -70;
+      _container.addChild(text1);
+
+      text2 = new createjs.Text("Tape tes amis et bute pas le chat !", "20px bowlby_oneregular", "#ff5382");
+      text2.textAlign = "center";
+      _container.addChild(text2);
+      //hero
+      var spriteSheet = new createjs.SpriteSheet(game_assets.spritesheets.hero);
+      animation1 = new createjs.Sprite(spriteSheet, 'fly');
+      _container.addChild(animation1);
+      animation1.x = -200;
+      animation1.y = -200;
+
+      //CHAT
+      var spriteSheet = new createjs.SpriteSheet(game_assets.spritesheets.cat);
+      animation2 = new createjs.Sprite(spriteSheet, "love");
+      _container.addChild(animation2);
+      animation2.x = 50;
+      animation2.y = -200;
+
+      //_btnStart
+      _btnStart = new createjs.Container();
+      _btnStart.y = 120;
+      _btnStart.mouseChildren = false; //crerr le bouton en un block
+      _container.addChild(_btnStart);
+      var bg = new createjs.Shape();
+      bg.graphics.beginFill("#6a7bff").drawRoundRect(-70, -30, 140, 60, 10);
+      var label = new createjs.Text("START", "20px bowlby_oneregular", "#bbbffe")
+      label.textAlign = "center";
+      label.textBaseline = "middle";
+      _btnStart.addChild(bg, label);
+      _btnStart.addEventListener('click', _onClickStart);
+
+      //animation d'entrée
+      createjs.Tween.get(text1)
+        .to({y : 800},0)
+        .wait(300)
+        .to({y : -70}, 1000, createjs.Ease.quartOut);
+
+        createjs.Tween.get(text2)
+          .to({y : 800},0)
+          .wait(500)
+          .to({y : 0}, 1000, createjs.Ease.quartOut);
+
+        createjs.Tween.get(animation1)
+          .to({x : -800},0)
+          .wait(1000)
+          .to({x : -200}, 1000, createjs.Ease.quartOut);
+
+          createjs.Tween.get(animation2)
+            .to({x : 800},0)
+            .wait(600)
+            .to({x : 50}, 1000, createjs.Ease.quartOut);
+
+            createjs.Tween.get(_btnStart)
+              .to({y : 800},0)
+              .wait(500)
+              .to({y : 120}, 1000, createjs.Ease.quartOut);
+    }
+    function _onClickStart(){
+      console.log("clique");
+
+      hero = new SuperHero();
+      hero.create();
+      ennemis =  new Ennemis();
+      ennemis.create();
+      score = new Score();
+      score.create();
+
+      if (_container) {
+        stage.removeChild(_container);
+        _btnStart.removeAllEventListeners();
+        _container = _btnStart = null;
+      }
+    }
+
+    var obj = {
+      create : _create,
+    };
     return obj;
   }
 })(); //"()" pour l'auto apeuler apres sa déclaration
