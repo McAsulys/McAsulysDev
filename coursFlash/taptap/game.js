@@ -69,14 +69,20 @@
   class Hammer {
     constructor() {
       this.container = new createjs.Container();
+      this.container.setBounds(200,0,200,200);
+
+      var b = new createjs.Shape();
+      b.graphics.beginFill("red").drawRect(200,0,200,200);
+      this.container.addChild(b);
+
       hammer = new createjs.Bitmap("assets/hammer.png");
-      hammer.scaleX = -0.6;
-      hammer.scaleY = 0.6;
-      hammer.x= 650;
-      hammer.y= 400;
-      hammer.regX = 60;
-      hammer.regY = 500;
-      hammer.rotation = 0;
+      this.container.scaleX = -0.6;
+      this.container.scaleY = 0.6;
+      this.container.x= 650;
+      this.container.y= 400;
+      this.container.regX = 60;
+      this.container.regY = 500;
+      this.container.rotation = 0;
 
       var that = this;
       stage.on("stagemousedown", function(){
@@ -90,17 +96,35 @@
     }
     tap(){ //lorsque le joueur clique
       console.log("tap");
-      createjs.Tween.get(this.hammer).to({rotation : -55},200).to({rotation: 0}, 600);
+      createjs.Tween.get(this.container).to({rotation : -55},200).to({rotation: 0}, 600);
     }
     update(){
+      let pt = ponies.container.localToGlobal(ponies.container.x, ponies.container.y);
+      let isContact =  hammer.container.hitTest(pt.x, pt.y);
+      console.log('isContact : ', isContact);
 
+      if(ponies.container && hammer.container){
+        let isContact = checkCollision(ponies.container, hammer.container);
+        console.log(isContact);
+      }
+      if(Ponies.currentPony == 5){
+        Score.score -= 5;
+      }
+      else {
+        Score.score ++;
+      }
     }
   }
   class Ponies {
     constructor() {
       this.container = new createjs.Container();
+      this.container.setBounds(300, 300, 200, 300);
       stage.addChildAt(this.container,0);
-      var rnd = getRandomRange(1, 6);
+      this.currentPony = null;
+
+      var b = new createjs.Shape();
+      b.graphics.beginFill("blue").drawRect(300,300,200,300);
+      this.container.addChild(b);
 
       var pony1 = new createjs.Bitmap("assets/apple.png");
       pony1.visible = false;
@@ -138,15 +162,25 @@
       pony5.x = 250;
       pony5.y = 300;
 
+      let ponies = [pony1, pony2, pony3, pony4, pony5, spike];
+      this.container.addChild(pony1);
+      this.container.addChild(pony3);
+      this.container.addChild(pony2);
+      this.container.addChild(pony4);
+      this.container.addChild(pony5);
+      this.container.addChild(spike);
+
+      var that = this;
+      setInterval(function(){
+        let rnd = getRandomRange(0, 5);
+        that.currentPony = rnd;
+        for (var pony of ponies) {
+          pony.visible = false;
+        }
+        ponies[rnd].visible = true;
 
 
-
-    this.container.addChild(pony1);
-    this.container.addChild(pony3);
-    this.container.addChild(pony2);
-    this.container.addChild(pony4);
-    this.container.addChild(pony5);
-    this.container.addChild(spike);
+      }, 1000);
     }
 
     touch(){ //lorsque l'ennemie est touché
@@ -155,15 +189,20 @@
   }
   class Score {
     constructor() {
+      let score = 0;
+    }
+    update(){
 
     }
   }
 
   function updateStage(){
-    //if (hammer)
-      //hammer.update();
+    if (hammer)
+      hammer.update();
     //if (ponies)
       //ponies.update();
+    if (score)
+      score.update();
     stage.update();
   }
 })();

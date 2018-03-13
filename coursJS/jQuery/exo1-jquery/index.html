@@ -1,0 +1,116 @@
+<!doctype html>
+<html>
+	<head>
+		<title>exercice 2</title>
+		<link href="bootstrap.min.css" rel="stylesheet" />
+		<script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+		<script type="text/javascript" src="script.js"></script>
+
+		<style>
+			#container{
+				width:960px; border:1px dashed grey; padding:20px; margin:20px auto;
+			}
+
+			.displayNone{
+				display:none;
+			}
+
+			fieldset{
+				padding:20px; border:1px solid #ccc;
+			}
+
+			.error-field{
+				border:1px solid red; color:red;
+			}
+			.valid-field{
+				border:1px solid green; color:green;
+			}
+
+			.focus-field{
+				background:#efefef;
+			}
+			.titre{
+				color: red;
+				font-size: 40px;
+			}
+			.hide{
+				display: none;
+			}
+
+		</style>
+	</head>
+	<body>
+		<div id="container">
+
+		<h2>A l'assaut de jQuery !</h2>
+
+		<a id="logo-jquery" href="#" title="jquery.com">
+			<img src="jquery_icon.jpg" alt="logo jquery" />
+		</a>
+
+
+		<br /><br /><br />
+
+		<div id="content">
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor dapibus tortor, quis aliquet neque egestas sagittis. Donec dolor tellus, volutpat sed convallis eu, consectetur sit amet nulla. </p>
+
+			<button id="btn-animate">Animer le titre</button>
+			<button id="btn-hidetext">Cacher / decacher le texte</button>
+			<button id="btn-link">changer le lien du logo</button>
+			<br /><br />
+			<button id="btn-enabled">activation / desactivation des boutons</button>
+		</div>
+
+		<br /><br /><br />
+
+		<div id="formulaire" >
+			<form action="#" method="post">
+				<input type="hidden" name="hasError" value="0" />
+				<fieldset>
+					<label>Votre prenom*</label>
+					<input required="required" type="text" value="" name="prenom" placeholder="prenom" />
+				</fieldset>
+				<br />
+				<fieldset>
+					<label>Votre nom*</label>
+					<input required="required" type="text" value="" name="nom" placeholder="nom" />
+				</fieldset>
+				<br />
+				<fieldset>
+					<label>Votre societe</label>
+					<input type="text" value="" name="societe" placeholder="societe" />
+				</fieldset>
+				<br />
+				<fieldset>
+					<label>Votre email*</label>
+					<input required="required" type="email" value="" name="email" placeholder="email" />
+				</fieldset>
+				<br />
+				<fieldset>
+					<label>Votre age*</label>
+					<select required="required" name="age">
+						<option value="">Votre age ?</value>
+						<option value="15-20">Entre 15 et 20 ans</value>
+						<option value="20-25">Entre 20 et 25 ans</value>
+						<option value="25-30">Entre 25 et 30 ans</value>
+						<option value="30+">Plus de 30 ans</value>
+					</select>
+				</fieldset>
+				<br />
+				<fieldset>
+					<label>Notation du proj de TP * <small>  (entre 15/20 et 20/20)</small></label>
+					<input data-min="15" data-max="20" required="required" data-validation="borne" type="text" value="" name="note" placeholder="note" />
+				</fieldset>
+				<br /><br />
+				<button id="formulaire-btn">Valider !</button>
+
+				<br /><br />--------
+				<div>Champs Valides<ul id="champs-valid"></ul></div>
+				<div>Champs Invalides<ul id="champs-error"></ul></div>
+
+			</form>
+		</div>
+
+
+	</body>
+</html>
